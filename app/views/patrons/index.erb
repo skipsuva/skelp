@@ -1,0 +1,12 @@
+<h1>Patrons</h1>
+
+<% @patrons.map do |patron| %>
+  <ul>
+    <h3> <a href="/patrons/<%=patron.slug%>"><%= patron.name %></a></h3>
+    <h5>Email Address: <%= patron.email %> </h5>
+    <h5>Age: <%= patron.age %> </h5>
+    <br>
+  </ul>
+  <%end%>
+
+<!-- Need css formatting for images  -->

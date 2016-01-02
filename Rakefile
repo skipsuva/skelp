@@ -1,8 +1,8 @@
-require_relative 'config/environment'
-load "lib/tasks/migrations.rake"
+ENV["SINATRA_ENV"] ||= "development"
 
-desc "Opens a console"
+require_relative './config/environment'
+require "sinatra/activerecord/rake"
+
 task :console do
-  require_relative 'config/environment'
   Pry.start
 end

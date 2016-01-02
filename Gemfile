@@ -1,11 +1,13 @@
 # A sample Gemfile
 source "https://rubygems.org"
 
+gem 'sinatra'
+gem 'activerecord', :require => 'active_record'
+gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
+gem 'rake'
+gem 'require_all'
 gem 'sqlite3'
-gem 'activerecord', require: 'active_record'
+gem 'thin'
+gem 'shotgun'
 gem 'pry'
-gem 'rack'
-gem 'tilt'
-gem 'pry'
-
-gem 'sinatra', require: 'sinatra/base'
+gem 'rack-test'

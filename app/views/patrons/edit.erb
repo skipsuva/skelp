@@ -1,0 +1,19 @@
+<br>
+<h3>Your Review:</h3>
+<h4> <a href="/bars/<%=Bar.find_by_id(@review.bar_id).slug%>"> <%= Bar.find_by_id(@review.bar_id).name %></a></h4>
+<h5>Rating: <%= @review.rating %>/5</h5>
+<p><%= @review.comment %></p>
+<h5>Recommended? <%= @review.would_recommend == true ? "Yes" : "No" %></h5>
+<br>
+<br>
+<h3>Edit your Review:</h3>
+<form action="/patrons/edit/<%= @review.id %>" method="post">
+  Rating: <input type="number" name="review[rating]" min="1" max="5">/5
+  <br>
+  Comment: <input type="text" name="review[comment]">
+  <br>
+  Would you recommend? <input type="radio" value="true" name="review[recommend]">Yes
+                       <input type="radio" value="false" name="review[recommend]">No
+  <br>
+  <input type="submit" value="Re-Submit">
+</form>

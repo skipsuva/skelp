@@ -1,0 +1,41 @@
+<h1><%= @bar.name %></h1>
+<!-- average rating -->
+
+<img src="<%= @bar.img_url %>" alt="<%= @bar.name %> image" />
+
+<h5>Located: <%= @bar.address %> </h5>
+<h5>Theme: <%= @bar.theme %> </h5>
+
+<br>
+<h3>Reviews:</h3>
+<h4>Average Rating: <%= @reviews.average(:rating).to_i != 0 ? @reviews.average(:rating).to_i : "No Ratings Yet" %> </h5>
+  <% @reviews.each do |review| %>
+    <ul>
+      <h5>Rating: <%= review.rating %>/5</h5>
+      <h6> <a href="/patrons/<%=Patron.find_by_id(review.patron_id).slug%>"> <%= Patron.find_by_id(review.patron_id).name%></a></h6>
+      <p><%= review.comment %></p>
+      <h5>Recommended? <%= review.would_recommend == true ? "Yes" : "No" %></h5>
+    </ul>
+    <br>
+    <%end%>
+
+<br>
+<br>
+<h3>Write a Review:</h3>
+
+<form action="/new" method="POST">
+  Your Name: <input type="text" name="patron[name]">
+  Your Email: <input type="text" name="patron[email]">
+  Your Age: <input type="text" name="patron[age]">
+  <br>
+  <br>
+  <input type="hidden" name="bar[existing][name]" value="<%=@bar.name%>">
+  Rating: <input type="number" name="review[rating]" min="1" max="5">/5
+  <br>
+  Comment: <input type="text" name="review[comment]">
+  <br>
+  Would you recommend? <input type="radio" value="true" name="review[recommend]">Yes
+                       <input type="radio" value="false" name="review[recommend]">No
+                       <br>
+  <input type="submit" value="Submit">
+</form>
