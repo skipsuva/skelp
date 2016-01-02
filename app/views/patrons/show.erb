@@ -1,11 +1,13 @@
-<h2>Name: <%= @patron.name %></h2>
+<h3>Name: <%= @patron.name %></h2>
 <h3>Email: <%= @patron.email %></h3>
 <h3>Age: <%= @patron.age %></h3>
 <h3>Average Bar Rating: <%= Review.all.where(patron_id: @patron.id).average(:rating).to_i != 0 ? Review.all.where(patron_id: @patron.id).average(:rating).to_i : "No Ratings Yet" %> </h5>
 
 <br>
+<div class="showreviews">
 <h3>Patron Reviews:</h3>
   <% @patron.reviews.each do |review| %>
+    <div class="indivreview">
     <ul>
       <h4> <a href="/bars/<%=Bar.find_by_id(review.bar_id).slug%>"> <%= Bar.find_by_id(review.bar_id).name %></a></h4>
       <h5>Rating: <%= review.rating %>/5</h5>
@@ -21,4 +23,6 @@
         </form>
     </ul>
     <br>
+  </div>
   <%end%>
+</div>

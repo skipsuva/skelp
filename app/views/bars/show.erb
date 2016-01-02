@@ -1,23 +1,29 @@
 <h1><%= @bar.name %></h1>
 <!-- average rating -->
 
-<img src="<%= @bar.img_url %>" alt="<%= @bar.name %> image" />
+<img class="featuredimg" src="<%= @bar.img_url %>" alt="<%= @bar.name %> image" />
 
 <h5>Located: <%= @bar.address %> </h5>
 <h5>Theme: <%= @bar.theme %> </h5>
 
 <br>
-<h3>Reviews:</h3>
-<h4>Average Rating: <%= @reviews.average(:rating).to_i != 0 ? @reviews.average(:rating).to_i : "No Ratings Yet" %> </h5>
-  <% @reviews.each do |review| %>
-    <ul>
-      <h5>Rating: <%= review.rating %>/5</h5>
-      <h6> <a href="/patrons/<%=Patron.find_by_id(review.patron_id).slug%>"> <%= Patron.find_by_id(review.patron_id).name%></a></h6>
-      <p><%= review.comment %></p>
-      <h5>Recommended? <%= review.would_recommend == true ? "Yes" : "No" %></h5>
-    </ul>
-    <br>
-    <%end%>
+<div class="showreviews">
+  <h3>Reviews:</h3>
+    <h4>Average Rating: <%= @reviews.average(:rating).to_i != 0 ? @reviews.average(:rating).to_i : "No Ratings Yet" %> </h5>
+
+        <% @reviews.each do |review| %>
+        <div class="indivreview">
+          <ul>
+            <h5>Rating: <%= review.rating %>/5</h5>
+            <h6> <a href="/patrons/<%=Patron.find_by_id(review.patron_id).slug%>"> <%= Patron.find_by_id(review.patron_id).name%></a></h6>
+            <p><%= review.comment %></p>
+            <h5>Recommended? <%= review.would_recommend == true ? "Yes" : "No" %></h5>
+          </ul>
+        <br>
+        </div>
+        <%end%>
+
+</div>
 
 <br>
 <br>

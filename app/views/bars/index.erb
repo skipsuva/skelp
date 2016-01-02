@@ -1,16 +1,19 @@
 <h1>Bars</h1>
+<div class="listwrapper">
 
 <% @bars.order(:name).map do |bar| %>
-  <ul>
-    <a href="/bars/<%=bar.slug%>"><img src="<%= bar.img_url %>" alt="<%= bar.name %> image" /></a>
-    <h3> <a href="/bars/<%=bar.slug%>"><%= bar.name %></a></h3>
-    <h5>Located: <%= bar.address %> </h5>
-    <h5>Theme: <%= bar.theme %> </h5>
-    <h5>Average Rating: <%= Review.all.where(bar_id: bar.id).average(:rating).to_i != 0 ? Review.all.where(bar_id: bar.id).average(:rating).to_i : "No Ratings Yet" %> </h5>
+  <div class="cluster">
+    <ul>
+      <a href="/bars/<%=bar.slug%>"><img class="boximg" src="<%= bar.img_url %>" alt="<%= bar.name %> image" /></a>
+      <h3> <a href="/bars/<%=bar.slug%>"><%= bar.name %></a></h3>
+      <h5>Located: <%= bar.address %> </h5>
+      <h5>Theme: <%= bar.theme %> </h5>
+      <h5>Average Rating: <%= Review.all.where(bar_id: bar.id).average(:rating).to_i != 0 ? Review.all.where(bar_id: bar.id).average(:rating).to_i : "No Ratings Yet" %> </h5>
 
-    <!-- average rating  -->
-    <br>
-  </ul>
+      <!-- average rating  -->
+      <br>
+    </ul>
+  </div>
   <%end%>
-
+</div>
 <!-- Need css formatting for images  -->

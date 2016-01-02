@@ -2,16 +2,20 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
+    <link href="<%= url('../style.css') %>" rel="stylesheet" type="text/css" />
     <title>Skelp</title>
   </head>
   <body>
-    <div class="">
-      <h1>Skelp</h1>
+    <div class="header">
+      <div class="logo">
+        <img src="/dancingbeer.gif" alt="dancing beer" />
+        <a href="/"><img id="logo" src="/logo.png" alt="logo"/></a>
+        <img src="http://www.gifs.net/Animation11/Food_and_Drinks/Alcoholic_Beverages/Cartoon_beer.gif" alt="dancing beer" />
+      </div>
       <nav>
-        <h4> <a href="/bars/search"> Search </a></h4>
-        <h4> <a href="/bars/"> Bars </a></h4>
-        <h4> <a href="/reviews/new"> Write a Review </a></h4>
+        <li> <a href="/bars/search"> Search </a></li>
+        <li> <a href="/bars/"> Bars </a></li>
+        <li> <a href="/reviews/new"> Write a Review </a></li>
       </nav>
     </div>
     <%= yield %>
