@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
 
   get '/new' do
+    @bars = Bar.all
     erb :'reviews/new'
   end
 

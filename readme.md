@@ -24,15 +24,20 @@ TO DOs
   edit bar info?
   <!-- add review from bar page -->
   <!-- Build search page -->
-  fix the mona's thing
 
 
-  clear DB of testing data
+  <!-- clear DB of testing data -->
   <!-- find better img_urls for seed bar data -->
   <!-- build out seed document with more robust data -->
-  re-seed
+  <!-- re-seed -->
 
-  formatting
-    pages with CSS
-    bar index view with boxes
-    nav bar
+  <!-- formatting -->
+    <!-- pages with CSS -->
+    <!-- bar index view with boxes -->
+    <!-- nav bar -->
+  Introduce Sessions
+    log in, log out form in nav bar
+    log in checks just email
+    gives patron only access to edit their own reviews
+
+    could go furthr and only allow new reviews by 
