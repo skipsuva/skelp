@@ -1,8 +1,8 @@
 <form action="/new" method="POST">
   <div class="creds">
-    Your Name: <input type="text" name="patron[name]">
-    Your Email: <input type="text" name="patron[email]">
-    Your Age: <input type="text" name="patron[age]">
+    <p>Your Name: <input type="text" name="patron[name]"></p>
+    <p>Your Email: <input type="text" name="patron[email]" required></p>
+    <p>Your Age: <input type="text" name="patron[age]"></p>
   </div>
   <br>
   <br>
@@ -19,23 +19,21 @@
   <br>
   <br>
   <div class="newbar">
-    <h4>Add a new bar:</h4>
-      Name: <input type="text" name="bar[new][name]"><br>
-      Address: <input type="text" name="bar[new][address]"><br>
-      Theme: <input type="text" name="bar[new][theme]">
-      Image Url: <input type="text" name="bar[new][img_url]">
+    <h3>Or add a new bar:</h3>
+      <p>Name: <input type="text" name="bar[new][name]"></p>
+      <p>Address: <input type="text" name="bar[new][address]"></p>
+      <p>Theme: <input type="text" name="bar[new][theme]"></p>
+      <p>Image Url: <input type="text" name="bar[new][img_url]"></p>
   </div>
   <br>
   <br>
   <div class="review">
     <h3>Your Review:</h3>
-    Rating: <input type="number" name="review[rating]" min="1" max="5">/5
-    <br>
-    Comment: <input type="text" name="review[comment]">
-    <br>
-    Would you recommend?
-    <input type="radio" value="true" name="review[recommend]">Yes
-    <input type="radio" value="false" name="review[recommend]">No
+    <p>Rating: <input type="number" name="review[rating]" min="1" max="5" required>/5</p>
+    <p>Comment: <input type="text" name="review[comment]" required></p>
+    <p>Would you recommend?</p>
+    <input type="radio" value="true" name="review[recommend]"required>Yes
+    <input type="radio" value="false" name="review[recommend]"required>No
   </div>
   <br>
   <input type="submit" value="Submit">

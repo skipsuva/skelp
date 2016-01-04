@@ -1,7 +1,7 @@
 class BarsController < ApplicationController
 
   get "/" do
-    @bars = Bar.all
+    @bars = Bar.all.order(:name)
     erb :'bars/index'
   end
 
