@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  encoding: SQL_ASCII
+  timeout: 5000
+  port: 5432
+
+development:
+  <<: *default
+  username: <%= ENV['PG_USER'] %>
+  password: <%= ENV['PG_PASS'] %>
+  database: db/my_db_development
+
+test:
+  <<: *default
+  database: db/my_db_test
+
+production:
+  url: <%= ENV["DATABASE_URL"] %>
