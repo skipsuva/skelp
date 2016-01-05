@@ -9,12 +9,6 @@ ActiveRecord::Base.establish_connection(
   database: "db/development.db")
 
 $: << '.'
-# Dir["app/models/*.rb"].each {|f| require f}
-# Dir["app/controllers/*.rb"].each {|f| require f}
-# Dir["app/controllers/*/*.rb"].each {|f| require f}
-
 
 
 require_all 'app'
-# require_all 'lib'
-# set :database, {adapter: "sqlite3", database: "../db/database.db"}
