@@ -17,6 +17,5 @@ gem 'sinatra-redirect-with-flash'
 gem 'pg'
 
 group :development do
- gem 'sqlite3'
  gem "tux"
 end
