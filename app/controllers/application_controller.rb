@@ -12,8 +12,8 @@ class ApplicationController < Sinatra::Base
 
   post '/new' do
     @review = Review.new(rating: params[:review][:rating], comment: params[:review][:comment], would_recommend: params[:review][:recommend])
-
-    if params[:bar][:new] != nil
+    binding.pry
+    if params[:bar][:new][:name] != ""
       @bar = Bar.create(name: params[:bar][:new][:name], address: params[:bar][:new][:address], theme: params[:bar][:new][:theme], img_url: params[:bar][:new][:img_url])
     else
       @bar = Bar.find_by_name(params[:bar][:existing][:name])

@@ -1,6 +1,8 @@
 class Patron < ActiveRecord::Base
   has_many :reviews
 
+  has_many :bars, through: :reviews
+
   validates :email, presence: true
   # validates :age, greater than 21
 
