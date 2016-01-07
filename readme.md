@@ -1,5 +1,9 @@
 SKELP - Dive Bar Reviews
 
+
+Use this to push to heroku:
+git push heroku convert:master
+
 MODELS
   Patron
     has many ratings
@@ -40,4 +44,4 @@ TO DOs
     log in checks just email
     gives patron only access to edit their own reviews
 
-    could go furthr and only allow new reviews by 
+    could go furthr and only allow new reviews by
